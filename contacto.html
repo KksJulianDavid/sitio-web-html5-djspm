@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario de contacto, mesa de ayuda digital, canales telefónicos y ubicación de las oficinas del Distrito Judicial de San Pedro de Macorís.">
+  <title>Contacto y Mesa de Ayuda | Distrito Judicial de San Pedro de Macorís</title>
+</head>
+<body>
+
+  <header>
+    <h1>Contacto y Mesa de Ayuda al Usuario</h1>
+    <p>Recepción de Requerimientos Procesales, Turnos de Atención y Canales Oficiales de Asistencia</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios y Catálogo</a></li>
+        <li><a href="contacto.html">Contacto y Solicitudes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="canales-atencion">
+      <h2>Canales Oficiales y Directorio de Enlaces</h2>
+      <p>
+        Para comunicarse directamente con las secretarías o consultar normativas vigentes, utilice las siguientes vías rápidas:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Navegación interna rápida:</strong>
+          <a href="#formulario-solicitud">Ir directamente al formulario de trámite judicial</a>
+        </li>
+        <li>
+          <strong>Canal telefónico centralizado:</strong>
+          <a href="tel:+18095292000">Llamar a la Central del Palacio de Justicia (+1 809-529-2000)</a>
+        </li>
+        <li>
+          <strong>Buzón de recepción electrónica:</strong>
+          <a href="mailto:mesadeayuda.spm@poderjudicial.gob.do">Escribir a mesadeayuda.spm@poderjudicial.gob.do</a>
+        </li>
+        <li>
+          <strong>Portal del órgano supremo:</strong>
+          <a href="https://www.poderjudicial.gob.do" target="_blank" rel="noopener">Visitar el Portal Institucional del Poder Judicial Dominicano (Abre en nueva pestaña)</a>
+        </li>
+        <li>
+          <strong>Formulario oficial descargable:</strong>
+          <a href="documentos/formulario_solicitud_djspm.pdf" download="formulario_solicitud_djspm.pdf">Descargar Modelo Formal de Solicitud de Certificación en PDF</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="formulario-solicitud">
+      <h2>Mesa de Radicación y Solicitudes en Línea</h2>
+      <p>Complete todos los campos obligatorios del formulario para canalizar su requerimiento judicial:</p>
+
+      <form action="contacto.html" method="get">
+        
+        <fieldset>
+          <legend>Datos de Identificación del Compareciente</legend>
+
+          <p>
+            <label for="nombre-completo">Nombre Completo del Solicitante o Abogado:</label>
+            <input type="text" id="nombre-completo" name="nombre_completo" required minlength="4" maxlength="80" placeholder="Ej. Lic. Carlos Santana Méndez">
+          </p>
+
+          <p>
+            <label for="correo-electronico">Correo Electrónico Institucional o Personal:</label>
+            <input type="email" id="correo-electronico" name="correo_electronico" required placeholder="abogado@dominio.com">
+          </p>
+
+          <p>
+            <label for="telefono-movil">Número Telefónico de Notificación:</label>
+            <input type="tel" id="telefono-movil" name="telefono_movil" required pattern="[0-9]{10}" placeholder="8091234567 (10 dígitos)">
+          </p>
+
+          <p>
+            <span>Calidad del Compareciente:</span>
+            <input type="radio" id="rol-abogado" name="calidad_solicitante" value="abogado" required>
+            <label for="rol-abogado">Abogado Apoderado / Letrado</label>
+
+            <input type="radio" id="rol-ciudadano" name="calidad_solicitante" value="ciudadano">
+            <label for="rol-ciudadano">Ciudadano / Parte en Causa</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Especificación del Trámite Judicial y Documentación</legend>
+
+          <p>
+            <label for="tribunal-competente">Tribunal o Sala Judicial de Destino:</label>
+            <select id="tribunal-competente" name="tribunal_competente" required>
+              <option value="">-- Elija la jurisdicción correspondiente --</option>
+              <optgroup label="Jurisdicción Civil y Comercial">
+                <option value="primera_sala_civil">Primera Sala de la Cámara Civil</option>
+                <option value="segunda_sala_civil">Segunda Sala de la Cámara Civil</option>
+                <option value="juzgado_paz_civil">Juzgado de Paz Ordinario</option>
+              </optgroup>
+              <optgroup label="Jurisdicción Penal e Instrucción">
+                <option value="sala_instruccion">Juzgado de la Instrucción</option>
+                <option value="tribunal_colegiado">Tribunal Colegiado de Primera Instancia</option>
+              </optgroup>
+              <optgroup label="Jurisdicciones Especializadas">
+                <option value="tribunal_trabajo">Juzgado de Trabajo</option>
+                <option value="tribunal_tierras">Tribunal de Tierras de Jurisdicción Original</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <p>
+            <label for="fecha-tramite">Fecha Solicitada para Audiencia o Depósito:</label>
+            <input type="date" id="fecha-tramite" name="fecha_tramite" required min="2026-11-01" max="2027-12-31">
+          </p>
+
+          <p>
+            <label for="hora-preferida">Horario Preferente de Turno de Atención:</label>
+            <input type="time" id="hora-preferida" name="hora_preferida" required min="08:00" max="16:00">
+          </p>
+
+          <p>
+            <label for="cantidad-anexos">Cantidad Estimada de Folios o Piezas Físicas:</label>
+            <input type="number" id="cantidad-anexos" name="cantidad_anexos" min="1" max="500" value="1">
+          </p>
+
+          <p>
+            <label for="memorial-adjunto">Adjuntar Instancia Principal o Conclusiones en PDF:</label>
+            <input type="file" id="memorial-adjunto" name="memorial_adjunto" accept=".pdf">
+          </p>
+
+          <p>
+            <label for="resumen-pretension">Síntesis de la Pretensión Procesal o Asunto a Tratar:</label>
+            <textarea id="resumen-pretension" name="resumen_pretension" rows="5" cols="45" required minlength="15" placeholder="Detalle con claridad el número de causa, nombres de las partes y objeto del escrito depositado..."></textarea>
+          </p>
+
+          <p>
+            <input type="checkbox" id="consentimiento-legal" name="consentimiento_legal" required>
+            <label for="consentimiento-legal">Declaro bajo juramento que los datos suministrados son fidedignos y acepto ser notificado formalmente por vía electrónica.</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Radicar Solicitud Judicial Electrónica</button>
+        </p>
+
+      </form>
+    </section>
+
+    <section id="sede-judicial">
+      <h2>Atención Presencial y Dirección Física</h2>
+      <p>Si requiere personarse en sede judicial para trámites que demanden comparecencia in situ:</p>
+      
+      <address>
+        <strong>Edificio del Palacio de Justicia de San Pedro de Macorís</strong><br>
+        Calle Hermanas Mirabal Esquina Francisco Domínguez Charro<br>
+        Sector Miramar, San Pedro de Macorís, Código Postal 21000<br>
+        República Dominicana<br>
+        Teléfono conmutador: <a href="tel:+18095292000">(809) 529-2000</a><br>
+        Correo electrónico: <a href="mailto:informacion.spm@poderjudicial.gob.do">informacion.spm@poderjudicial.gob.do</a>
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      Palacio de Justicia de San Pedro de Macorís, Calle Hermanas Mirabal Esq. Francisco Domínguez Charro, San Pedro de Macorís, República Dominicana.
+    </address>
+    <p>Proyecto desarrollado para la materia ISW-311 Tecnologías de Internet I — Unidad I.</p>
+    <p><strong>Estudiante:</strong> Julián Vázquez | <strong>Matrícula:</strong> 2023-0715</p>
+  </footer>
+
+</body>
+</html>
+
